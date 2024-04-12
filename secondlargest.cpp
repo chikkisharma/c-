@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 int smax(int arr[],int n){
-    sort(arr,arr+n);
     int max=INT_MIN;
     for(int i=0;i<n;i++){
         if(arr[i]>max){
