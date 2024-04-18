@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
-void keypair(int arr[],int n,int t){
+bool keypair(int arr[],int n,int t){
     sort(arr,arr+n);
     int i=0;
     int j=n-1;
     while(i<j){
         if(arr[i]+arr[j]==t){
-            cout<<arr[i]<<" "<<arr[j]<<endl;
+            return true;
             i++;
             j--;
         }
@@ -16,16 +16,19 @@ void keypair(int arr[],int n,int t){
         else if(arr[i]+arr[j]<t){
             i++;
          }
-       else if(arr[i]+arr[j]!=t){
-        cout<<"-1"<<" "<<"-1"<<endl;
     }
-    }
+    return false;
 }
 int main(){
-   // int arr[4]={2,7,11,13};
-    int arr[5]={5,4,4,2,2};
-    int n=5;
-    int t=1;
+    int arr[6]={1,4,45,6,8,10};
+    int n=6;
+    int t=10;
     
-    keypair(arr,n,t);
+    bool ans=keypair(arr,n,t);
+    if(ans==1){
+        cout<<"true";
+    }
+    else{
+        cout<<"false;
+    }
 }
